@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/receiverLayout"
+    android:background="@drawable/reciver_shape"
+    android:layout_marginEnd="80dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:id="@+id/receiverTV"
+        android:text=""
+        android:textSize="20sp"
+        android:padding="8dp"
+        >
+    </TextView>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/senderLayout"
+        android:background="@drawable/sender_shape"
+        android:layout_marginStart="80dp"
+        android:layout_alignParentEnd="true"
+        >
+
+        <TextView
+            android:id="@+id/senderTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text=""
+            android:elevation="4dp"
+            android:textSize="20sp"
+            android:padding="8dp"
+            >
+        </TextView>
+    </LinearLayout>
+
+</RelativeLayout>

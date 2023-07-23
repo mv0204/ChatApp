@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/mainAppBar"
+        android:layout_height="60dp"
+        android:background="@color/blue_shade2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chat App"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:padding="10dp"
+            ></TextView>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/search_button"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="20dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_search"
+            android:padding="15dp"
+            android:layout_marginEnd="10dp"
+            app:tint="@color/white">
+        </ImageButton>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/fragmentContainer"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/div"
+        android:layout_below="@+id/mainAppBar"
+        android:layout_marginBottom="16dp"></FrameLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/div"
+        app:dividerColor="#DCD9D9"
+        android:layout_above="@+id/bottomNV"
+        ></com.google.android.material.divider.MaterialDivider>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:labelVisibilityMode="selected"
+        app:itemTextAppearanceInactive="@dimen/design_bottom_navigation_text_size"
+        app:itemTextAppearanceActive="@dimen/design_bottom_navigation_active_text_size"
+        app:itemIconTint="@color/bottom_nav_color"
+
+        app:itemIconSize="30dp"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:itemRippleColor="@color/blue_shade4"
+        app:menu="@menu/bottom_menu_main"
+></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>
