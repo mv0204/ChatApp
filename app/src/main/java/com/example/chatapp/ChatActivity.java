@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -38,6 +39,7 @@ public class ChatActivity extends AppCompatActivity {
     String chatroomID;
     ChatroomModel chatroomModel;
     RecyclerAdapterChatActivity adapterChatActivity;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +53,15 @@ public class ChatActivity extends AppCompatActivity {
         chatInput = findViewById(R.id.chatInputEditText);
         otherUser = AndroidUtils.getUserModelAsIntent(getIntent());
         userName.setText(otherUser.getUserName());
+        imageView=findViewById(R.id.profile_pic_view_2);
 
         chatroomID = FirebaseUtils.createChatRoomID(FirebaseUtils.getUserId(), otherUser.getUserId());
-
+        FirebaseUtils.getOtherUserProfilePicStorageReference(otherUser.getUserId()).getDownloadUrl()
+                .addOnCompleteListener(t -> {
+                    if (t.isSuccessful()) {
+                        AndroidUtils.loadImage(t.getResult(),imageView,this);
+                    }
+                });
 
         backButton.setOnClickListener(view -> {
             onBackPressed();

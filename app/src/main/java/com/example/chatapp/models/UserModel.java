@@ -1,11 +1,12 @@
 package com.example.chatapp.models;
 
 import com.google.firebase.Timestamp;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class UserModel {
     String phoneNo,userName,userId;
     Timestamp createdTimeStamp;
-
+    String messageToken;
     public UserModel() {
     }
 
@@ -46,5 +47,13 @@ public class UserModel {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getMessageToken() {
+        return messageToken;
+    }
+
+    public void setMessageToken(String messageToken) {
+        this.messageToken = messageToken;
     }
 }

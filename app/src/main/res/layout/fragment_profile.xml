@@ -1,15 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:gravity="center"
+
+    <LinearLayout
+        android:id="@+id/centerl"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile fragment" />
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".LoginNoScreen">
+
+
+        <ImageView
+            android:id="@+id/imageProfileFrag"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="@color/blue_shade2"
+            android:padding="10dp"
+            android:src="@drawable/ic_person_white_100"
+
+            ></ImageView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/LoginTextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/blue_shade1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameProfileFrag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person_24"
+                android:drawablePadding="20dp"
+                android:drawableTint="@color/blue_shade1"
+                android:hint="Enter Your Username"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/blue_shade1">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/LoginTextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/blue_shade1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneProfileFrag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_phone2"
+                android:drawablePadding="20dp"
+                android:drawableTint="@color/blue_shade1"
+                android:enabled="false"
+                android:hint="Phone Number"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/blue_shade2">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateButtonProfileFrag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cornerRadius="20dp"
+                android:padding="10dp"
+                android:backgroundTint="@color/blue_shade2"
+                android:clickable="true"
+                android:text="Update"
+                android:textSize="24dp">
+
+            </com.google.android.material.button.MaterialButton>
+
+
+            <ProgressBar
+                android:id="@+id/progressbarProfileFrag"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/blue_shade1"
+                android:visibility="invisible"></ProgressBar>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/logoutProfileFrag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Logout ? "
+            android:textSize="18sp"
+            android:textStyle="italic"></TextView>
+
+    </LinearLayout>
 
 </RelativeLayout>

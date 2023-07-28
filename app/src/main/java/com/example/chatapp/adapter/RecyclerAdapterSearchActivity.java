@@ -37,6 +37,12 @@ Context context;
     if(model.getUserId().equals(FirebaseUtils.getUserId())){
         holder.userNameTV.setText(model.getUserName()+" (ME)");
     }
+        FirebaseUtils.getOtherUserProfilePicStorageReference(model.getUserId()).getDownloadUrl()
+                .addOnCompleteListener(t -> {
+                    if (t.isSuccessful()) {
+                        AndroidUtils.loadImage(t.getResult(),holder.userImage,context);
+                    }
+                });
     holder.itemView.setOnClickListener(v->{
         Intent intent =new Intent(context,ChatActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
